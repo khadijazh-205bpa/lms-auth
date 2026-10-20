@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qeydiyyat – LMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <aside class="side">
+    <div class="brand">Learn<span>Hub</span></div>
+    <div>
+      <h2>Öyrənməyə bu gün başla.</h2>
+      <p>Hesab yaradın və kurslara qoşulun. Qeydiyyat bir dəqiqədən az çəkir.</p>
+    </div>
+    <small>© 2026 LearnHub LMS</small>
+  </aside>
+ 
+  <main class="main">
+    <section class="card">
+      <h1>Hesab yarat</h1>
+      <p class="sub">Məlumatlarınızı daxil edin.</p>
+ 
+      <form action="#" method="post">
+        <div class="row">
+          <div class="field">
+            <label for="firstname">Ad</label>
+            <input type="text" id="firstname" name="firstname" required autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="lastname">Soyad</label>
+            <input type="text" id="lastname" name="lastname" required autocomplete="family-name">
+          </div>
+        </div>
+ 
+        <div class="field">
+          <label for="email">E-poçt</label>
+          <input type="email" id="email" name="email" placeholder="ad@numune.az" required autocomplete="email">
+        </div>
+ 
+        <div class="field">
+          <label for="role">Rol</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected>Seçin</option>
+            <option value="student">Tələbəyəm</option>
+            <option value="teacher">Müəlliməm</option>
+          </select>
+        </div>
+ 
+        <div class="field">
+          <label for="password">Şifrə</label>
+          <input type="password" id="password" name="password" minlength="8" placeholder="Ən azı 8 simvol" required autocomplete="new-password">
+        </div>
+ 
+        <div class="field">
+          <label for="confirm">Şifrəni təkrar et</label>
+          <input type="password" id="confirm" name="confirm" minlength="8" required autocomplete="new-password">
+        </div>
+ 
+        <div class="options">
+          <label><input type="checkbox" name="terms" required> İstifadə qaydaları ilə razıyam</label>
+        </div>
+ 
+        <button type="submit" class="btn">Hesab yarat</button>
+      </form>
+ 
+      <p class="switch">Artıq hesabın var? <a href="index.html">Daxil ol</a></p>
+    </section>
+  </main>
+ 
+</body>
+</html>
+ 

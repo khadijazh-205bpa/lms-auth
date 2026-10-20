@@ -1,0 +1,152 @@
+
+/* ===== LMS Login / Register ===== */
+:root {
+  --ink: #1f2a5a;
+  --ink-soft: #46508a;
+  --page: #eaf0f6;
+  --card: #ffffff;
+  --line: #cdd6e3;
+  --mark: #ffd84d;
+  --ok: #2e7d5b;
+  --text: #1b1f2a;
+  --muted: #5b6475;
+  --radius: 10px;
+}
+ 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+body {
+  font-family: "Figtree", "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--page);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+ 
+/* ----- Sol panel (dəftər xətləri) ----- */
+.side {
+  background-color: var(--ink);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 39px,
+    rgba(255, 255, 255, 0.08) 39px 40px
+  );
+  color: #fff;
+  padding: 56px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 6px solid var(--mark);
+}
+ 
+.brand {
+  font-family: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.brand span { background: var(--mark); color: var(--ink); padding: 0 6px; border-radius: 4px; }
+ 
+.side h2 {
+  font-family: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.15;
+  max-width: 14ch;
+}
+.side p { margin-top: 16px; max-width: 38ch; color: #c9d0f0; line-height: 1.6; }
+.side small { color: #9aa4d6; }
+ 
+/* ----- Sağ panel ----- */
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+ 
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  box-shadow: 0 12px 30px rgba(31, 42, 90, 0.08);
+}
+ 
+.card h1 {
+  font-family: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  font-size: 1.7rem;
+  color: var(--ink);
+}
+.card .sub { margin: 6px 0 24px; color: var(--muted); }
+ 
+/* ----- Form ----- */
+.field { margin-bottom: 16px; }
+.field label { display: block; font-weight: 600; font-size: 0.92rem; margin-bottom: 6px; }
+ 
+.field input,
+.field select {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--text);
+  background: #f8fafc;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--ink-soft);
+  box-shadow: 0 0 0 3px rgba(255, 216, 77, 0.55);
+  background: #fff;
+}
+.field input:user-invalid { border-color: #c0392b; }
+ 
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+ 
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0 20px;
+  font-size: 0.9rem;
+}
+.options label { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+.options input { accent-color: var(--ink); width: 16px; height: 16px; }
+ 
+a { color: var(--ink-soft); font-weight: 600; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--mark); outline-offset: 2px; }
+ 
+.btn {
+  width: 100%;
+  padding: 13px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ink);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn:hover { background: var(--ink-soft); }
+ 
+.switch { margin-top: 20px; text-align: center; color: var(--muted); font-size: 0.93rem; }
+ 
+/* ----- Mobil ----- */
+@media (max-width: 820px) {
+  body { grid-template-columns: 1fr; }
+  .side { padding: 28px 24px; border-right: none; border-bottom: 6px solid var(--mark); gap: 20px; }
+  .side h2 { font-size: 1.6rem; max-width: none; }
+  .side p, .side small { display: none; }
+}
+@media (max-width: 480px) {
+  .row { grid-template-columns: 1fr; gap: 0; }
+  .card { padding: 28px 20px; }
+}
+ 
